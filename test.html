@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Test </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-table@1.16.0/dist/bootstrap-table.min.js"></script>
+    <script type="text/javascript"src="testdata.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+  </head>
+  <body>
+    <div class="container-fluid p-5">
+      <div class="row">
+        <div class="col-12 col-lg-3 text-center shadow p-5">
+          <h1 class="text-uppercase fw-bold"> filters </h1>
+          <hr class="border border-3">
+          <form>
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Email" aria-label="email" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="phone" class="form-control" placeholder="Phone" aria-label="phone" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Name" aria-label="name" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Company" aria-label="company" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Choose country</option>
+                <option value="1">USA</option>
+                <option value="2">Qatar</option>
+                <option value="3">Dubai</option>
+              </select>
+            </div>
+            <div class="input-group mb-3">
+              <input type="date" class="form-control" placeholder="Date" aria-label="date" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-primary text-white fw-bold"> Filter </button>
+          </form>
+        </div>
+        <div class="col-12 col-lg-9 shadow p-5">
+          <h5 class="fw-bold"> Heroes </h5>
+          <hr>
+          <table id="datatable" class="table">
+            <thead>
+              <tr>
+                <th data-field="name">
+                  <span class="text-secondary"> Name </span>
+                </th>
+                <th data-field="phone">
+                  <span class="text-secondary"> Phone </span>
+                </th>
+                <th data-field="email">
+                  <span class="text-secondary"> Email </span>
+                </th>
+                <th data-field="date">
+                  <span class="text-secondary"> Date </span>
+                </th>
+                <th data-field="country">
+                  <span class="text-secondary"> Country </span>
+                </th>
+                <th data-field="company">
+                  <span class="text-secondary"> Company </span>
+                </th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('table').DataTable({
+          data: dataSet,
+          columns: [
+              { title: "Name" },
+              { title: "Phone" },
+              { title: "Email" },
+              { title: "Date." },
+              { title: "Country" },
+              { title: "Company" }
+          ]
+        });
+      });
+      var mydata = JSON.parse(da)
+    </script>
+  </body>
+</html>
